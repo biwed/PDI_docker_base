@@ -1,8 +1,5 @@
-name: Build Docker Image and Push to AWS ECR
-on:
-  push:
-    tags:
-    - '*'
+name: Build docker
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
