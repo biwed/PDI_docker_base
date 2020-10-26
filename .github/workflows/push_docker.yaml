@@ -12,5 +12,5 @@ jobs:
       run:  echo ${{ secrets.DOCKERHUB_PWD }} | docker login -u ${{ secrets.DOCKERHUB_LOGIN }} --password-stdin
     - name: Build, tag, and push image to Doker Hub
       run: |
-        docker build -t biwed/pdi-base:$GITHUB_REF .
-        docker push biwed/pdi-base:$GITHUB_REF
+        docker build -t biwed/pdi-base:${GITHUB_REF} .
+        docker push biwed/pdi-base:${GITHUB_REF}
