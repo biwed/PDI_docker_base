@@ -3,8 +3,6 @@ on:
   push:
     tags:
     - '*'
-
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,8 +11,6 @@ jobs:
         # Docker log
       run:  echo ${{ secrets.DOCKERHUB_PWD }} | docker login -u ${{ secrets.DOCKERHUB_LOGIN }} --password-stdin
     - name: Build, tag, and push image to Doker Hub
-      env:
-        IMAGE_TAG: ${{ GITHUB_REF }}
       run: |
-        docker build -t biwed/pdi-base:$IMAGE_TAG .
-        docker push biwed/pdi-base:$IMAGE_TAG
+        docker build -t biwed/pdi-base:$GITHUB_REF .
+        docker push biwed/pdi-base:$GITHUB_REF
