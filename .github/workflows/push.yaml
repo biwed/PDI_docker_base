@@ -1,0 +1,14 @@
+name: Build Docker Image and Push to AWS ECR
+on:
+  push:
+    tags:
+    - '*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: test_name
+      run: echo biwed/pdi-base:${GITHUB_REF}
+    - name: Build, tag
+      run: |
+        docker build -t biwed/pdi-base:${GITHUB_REF} .
