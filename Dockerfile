@@ -2,8 +2,8 @@ FROM  openjdk:8-jre-slim-buster
 LABEL Pentaho='Pentaho Data Integration Base'
 LABEL maintainer="biwed.ru@gmail.com"
 
-ENV PDI_VERSION=9.0 \
-    PDI_BUILD=9.0.0.0-423 \ 
+ENV PDI_VERSION=9.1 \
+    PDI_BUILD=9.1.0.0-324 \ 
     JAVA_HOME=/usr/local/openjdk-8 \
     JRE_HOME=${JAVA_HOME} \
     PENTAHO_JAVA_HOME=${JAVA_HOME} \
